@@ -1,5 +1,11 @@
 import java.util.ArrayList;
-
+/** Runs 2 threads and finds if there is a sub array that summing 
+ * all of his organs together to a given number.
+ * @author haimbacharr
+ * @author Maxko2
+ * @author EdenMar25
+ *@version 1.0
+ */
 public class ThreadCheckArray implements Runnable 
 {
 	private boolean flag;
@@ -7,7 +13,7 @@ public class ThreadCheckArray implements Runnable
 	SharedData sd;
 	ArrayList<Integer> array;
 	int b;
-	
+	/**Constructor*/
 	public ThreadCheckArray(SharedData sd) 
 	{
 		this.sd = sd;	
@@ -18,7 +24,11 @@ public class ThreadCheckArray implements Runnable
 		}		
 		winArray = new boolean[array.size()];
 	}
-	
+	/**Recursion function that sum an current organ with his previous organ
+	 * 
+	 * @param n     the size of the array.
+	 * @param b     the checked array.
+	 */
 	void rec(int n, int b)
 	{
 		synchronized (sd) 
@@ -51,7 +61,9 @@ public class ThreadCheckArray implements Runnable
 		}	
 		rec(n-1, b);
 	}
-
+/** Function that runs 2 threads in the array we want to check.
+ * 
+ */
 	public void run() {
 		if (array.size() != 1)
 			if (Thread.currentThread().getName().equals("thread1"))
