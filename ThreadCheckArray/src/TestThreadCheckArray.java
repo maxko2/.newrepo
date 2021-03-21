@@ -18,7 +18,7 @@ public class TestThreadCheckArray {
 			
 			System.out.println("Enter number");
 			num = input.nextInt();
-			System.out.println(array);
+			
 			SharedData sd = new SharedData(array, num);
 			
 			thread1 = new Thread(new ThreadCheckArray(sd), "thread1");
