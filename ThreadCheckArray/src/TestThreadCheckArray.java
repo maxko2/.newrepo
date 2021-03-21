@@ -11,8 +11,8 @@ public class TestThreadCheckArray {
 			System.out.println("Enter numbers for array");
 			
 			
-			for(Integer p: array)
-				p = input.nextInt();
+			for(int i=0; i<num;i++)
+				array.add(input.nextInt());
 			//for (int index = 0; index < num; index++) 
 			//	array[index] = input.nextInt();
 			
@@ -39,10 +39,10 @@ public class TestThreadCheckArray {
 				System.out.println("Sorry");
 				return;
 			}
-			System.out.println("Solution for b : " + sd.getB() + ",n = " + sd.getArray().length);
+			System.out.println("Solution for b : " + sd.getB() + ",n = " + sd.getArray().size());
 			System.out.print("I:    ");
-			for(int index = 0; index < sd.getArray().length ; index++)
-				System.out.print(index + "    ");
+			for(Integer p: array)	
+				System.out.print(sd.getArray().indexOf(p) + "    ");
 			System.out.println();
 			System.out.print("A:    ");
 			for (int index : sd.getArray())
